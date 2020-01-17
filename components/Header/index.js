@@ -2,11 +2,39 @@
 // -----------------------
 // Using a function create the component you see below:
 //
-//  <div class="header">
+// <div class="header">
 //    <span class="date">SMARCH 28, 2019</span>
 //    <h1>Lambda Times</h1>
 //    <span class="temp">98°</span>
-//  </div >
+// </div >
 // And add it to the DOM in the .header-container component
+const headerContainer = document.querySelector(".header-container")
 
-function Header() {}
+headerContainer.appendChild(Header())
+
+function Header() {
+    const Lheader = document.createElement('div');
+    const spanDate = document.createElement('span');
+    const h1 = document.createElement('h1');
+    const spanTemp = document.createElement('span');
+
+
+    // ClassList
+
+    Lheader.classList.add('header');
+    spanDate.classList.add('date');
+    spanTemp.classList.add('temp')
+
+
+    spanDate.textContent = 'January 17th, 2020';
+    h1.textContent = 'Lambda Times';
+    spanTemp.textContent = '29°'
+
+
+    Lheader.appendChild(spanDate);
+    Lheader.appendChild(h1);
+    Lheader.appendChild(spanTemp);
+
+
+    return Lheader
+}
